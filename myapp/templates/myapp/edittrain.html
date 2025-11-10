@@ -1,0 +1,68 @@
+{% extends 'myapp/adminbase.html' %}
+
+{% block content%}
+<form method="POST" action= "/updatetrain/{{ train.id }}">
+    {% csrf_token %}
+    <table>
+        <tr>
+            <td>
+                <input name = "train_no" required value ="{{train.train_no}}">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <input name = "train_name" required value ="{{train.train_name}}">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <input name = "source" required value ="{{train.source}}">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <input name = "dest" required value ="{{train.dest}}">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <input name = "total_km" required value ="{{train.total_km}}">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <input name = "travel_time" required value ="{{train.travel_time}}">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <input name = "nos" required value ="{{train.nos}}">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <input name = "price" required value ="{{train.price}}">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <input name = "travel_time" required value ="{{train.travel_time}}">
+            </td>
+        </tr>
+        <tr>
+            <tr>
+                <td>
+                    <input name = "date" required value ="{{train.date}}">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input name = "time" required value ="{{train.time}}">
+                </td>
+            </tr>
+            <td>
+               <button type = "submit">Update</button>
+            </td>
+        </tr>
+    </table>    
+{% endblock %}    

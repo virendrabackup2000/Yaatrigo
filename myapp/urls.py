@@ -1,0 +1,30 @@
+from django.urls import path
+from . import views
+
+urlpatterns = [
+    path('', views.home, name="home"),
+    path('findbus', views.findbus, name="findbus"),
+    path('findtrain', views.findtrain, name="findtrain"),
+    path('signup', views.signup, name="signup"),
+    path('signin', views.signin, name="signin"),
+    path('signout', views.signout, name="signout"),
+    path('admin', views.admin, name='admin'),
+    path('load_form', views.load_form ),
+    path('load_form_train', views.load_form_train ),
+    path('load_form_bus', views.load_form_bus ),
+    path('add', views.add ),
+    path('addtrain', views.addtrain ),
+    path('addbus', views.addbus ),
+    path('show', views.show ),
+    path('showtrain', views.showtrain ),
+    path('showbus', views.showbus ),
+    path('edit/<int:id>', views.edit),
+    path('edittrain/<int:id>', views.edittrain),
+    path('editbus/<int:id>', views.editbus),
+    path('update/<int:id>', views.update),
+    path('updatetrain/<int:id>', views.updatetrain),
+    path('updatebus/<int:id>', views.updatebus),
+    path('delete/<int:id>', views.delete),
+    path('deletetrain/<int:id>', views.deletetrain),
+    path('deletebus/<int:id>', views.deletebus),
+]

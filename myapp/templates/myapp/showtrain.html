@@ -1,0 +1,45 @@
+{% extends 'myapp/adminbase.html' %}
+
+{% block content%}
+{% for message in messages%}
+<p class = 'alert alert-success mt-3'>{{message}}</p>
+{% endfor %}
+<div style="overflow-x:hidden;overflow-y:smooth;height:600px;width:100%;margin-top:0px;background-image:url('/static/station01.jpg')"><h2 style="color:white;">List of Trains</h2>
+    <table class="table table-striped table-dark" >
+    <thead  style="background-color: dark;color: white;">
+        <td>ID</td>
+        <td>Train NO.</td>
+        <td>NAME</td>
+        <td>SOURCE</td>
+        <td>DESTINATION</td>
+        <td>Total KM</td>
+        <td> Travel Time</td>
+        <td>NUM OF SEATS</td>
+        <td>PRICE</td>
+        <td>DATE</td>
+        <td>TIME</td>
+        <td>Actions</td>
+    
+    </thead>
+    
+    {% for row in train %}
+    <tr  style="opacity:0.7;">
+        <td>{{forloop.counter}}</td>
+        <td>{{row.train_no }}</td>
+        <td>{{row.train_name}}</td>
+        <td>{{row.source}}</td>
+        <td>{{row.dest}}</td>
+        <td>{{row.total_km}}km</td>
+        <td>{{row.travel_time}}Hr</td>
+        <td>{{row.nos}}</td>
+        <td>{{row.price}}Rs</td>
+        <td>{{row.date}}</td>
+        <td>{{row.time}}</td>
+        <td> 
+            <a href = "edittrain/{{row.id}}">Edit</a> / 
+            <a href = "deletetrain/{{row.id}}">Delete</a>
+        </td>  
+    </tr>
+    {% endfor %}
+</table>
+{%endblock%}

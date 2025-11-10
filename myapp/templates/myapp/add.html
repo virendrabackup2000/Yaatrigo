@@ -1,0 +1,26 @@
+{% extends 'myapp/adminbase.html' %}
+
+{% block content%}
+{% for message in messages%}
+<p class = 'alert alert-success mt-3'>{{message}}</p>
+{% endfor %}
+<div style="height:600px;width:100%;margin-top:0px;background-image:url('/static/photo01.jpg')">
+<form method="POST" action = "add">
+    {% csrf_token %}
+    <center>
+    <label style="margin-top:60px;">Name:</label>
+    <div>{{form.username}}</div>
+    <label>Email:</label>
+    <div>{{form.email}}</div>
+    <label>Confirm Email:</label>
+    <div>{{form.email2}}</div>
+    <label>Password:</label>
+    <div>{{form.password}}</div>
+    <div>
+        <button style="background-color:blue; color:white;margin-top:10px;" type = "submit">Add</button>
+    </div>   
+    </center>
+
+</form> 
+</div>    
+{%endblock%}

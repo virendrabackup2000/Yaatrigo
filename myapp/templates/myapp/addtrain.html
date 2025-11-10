@@ -1,0 +1,37 @@
+{% extends 'myapp/adminbase.html' %}
+
+{% block content%}
+{% for message in messages%}
+<p class = 'alert alert-success mt-3'>{{message}}</p>
+{% endfor %}
+<div style="height:600px;width:100%;margin-top:0px;background-image:url('/static/train30.jpg')">
+   <form method="POST" action = "addtrain">
+      {% csrf_token %}
+       <center>
+       <label style="color:white;">Train NO.:</label>
+      <div>{{form.train_no}}</div>
+       <label style="color:white;">Train Name:</label>
+      <div>{{form.train_name}}</div>
+       <label style="color:white;">SOURCE:</label>
+      <div>{{form.source}}</div>
+      <label style="color:white;">DESTINATION:</label>
+      <div>{{form.dest}}</div>
+      <label style="color:white;">Total KM:</label>
+      <div>{{form.total_km}}</div>
+      <label style="color:white;">Travel Time:</label>
+      <div>{{form.travel_time}}</div>
+      <label style="color:white;">Number of Seats:</label>
+      <div>{{form.nos}}</div>
+      <label style="color:white;">PRICE:</label>
+      <div>{{form.price}}</div>
+      <label style="color:white;">Time:</label>
+      <div>{{form.time}}</div>
+      <label style="color:white;">Date:</label>
+      <div>{{form.date}}</div>
+      <div>
+          <button type = "submit" style="color:white;background-color:blue;margin-top:10px;">Add</button>
+        </div> 
+       </center>   
+    </form>  
+</div> 
+{%endblock%}

@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+          integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+    <title>YAATRIGO</title>
+    <style>
+      
+      *{
+        margin: 0px;
+        padding: 0px;
+      }
+
+      nav {
+        padding: 0px;
+        margin: 0px
+        overflow:hidden;
+        background-size:cover;
+        line-height:20px
+      }
+
+      nav a:hover {
+        background-color: red;
+        transition:0.5s;
+      } 
+      .bg-dark{
+        background: transparent !important
+      }
+
+      .bg-dark.scrolled{
+        background: black !important
+      }
+      
+      .carousel-indicators li{
+        height: 30px;
+        width: 30px;
+        margin: 0 5px;
+        border-radius:50px;
+        background-position: center;
+        background-size: cover;
+        border: 3px solid transparent;
+        transition: all 0.3s linear;
+      }
+      
+      .carousel-indicators li.active{
+        border-color: #ffffff;
+      }
+
+    </style>
+  </head>
+<body>
+  <nav class="navbar navbar-expand-md navbar-default bg-dark fixed-top ">
+    <div class="container-fluid ">
+     <a class="navbar-brand" href="#" style="color: white ;"><img src = "/static/1logo.png" style="height:50px;width:100px ;" ></a>
+     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
+              aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+     </button>
+        <div class="collapse navbar-collapse " id="navbarNavAltMarkup">
+            <div class="navbar-nav navbar-right " >
+                <a class="nav-item nav-link active" href="{% url 'home' %}" style="color: white;">Home <span class="sr-only">(current)</span></a>
+                <a class="nav-item nav-link" href="{% url 'findbus' %}" style="color: white;">Find Bus</a>
+                <a class="nav-item nav-link" href="{% url 'findtrain' %}" style="color: white;">Find Train</a>
+                {% if request.user.is_active %}
+                <a class="nav-item nav-link " href="{% url 'signout' %}" style="color: white;">Sign out</a>
+                {% else %}
+                <a class="nav-item nav-link " href="{% url 'signup' %}" style="color: white;">Sign Up</a>
+                {% endif %}
+
+
+            </div>
+        </div>
+    </div>
+  </nav> 
+
+ <div class = "container-auto">
+    <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
+        <ul class="carousel-indicators">
+          <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active" style = "background-image:url('/static/train.jpg.jpg')" ></li>
+          <li data-target="#carouselExampleCaptions" data-slide-to="1" style = "background-image:url('/static/train3.jpg')" ></li>
+          <li data-target="#carouselExampleCaptions" data-slide-to="2" style = "background-image:url('/static/train2.jpg.jpg')" ></li>
+        </ul>
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img src="/static/train.jpg.jpg" class="d-block w-100" style="height:550px;" alt="...">
+            <div class="carousel-caption d-none d-md-block text-ccc">
+              <h5>Welcome to The YAATRIGO</h5>
+              <p>The YAATRIGO have wish you to happy journey!</p>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <img src="/static/train3.jpg" class="d-block w-100" style="height:550px;" alt="...">
+            <div class="carousel-caption d-none d-md-block text-ccc">
+              <h5>Welcome to The YAATRIGO</h5>
+              <p>In this website you can find Trains easly.</p>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <img src="/static/train2.jpg.jpg" class="d-block w-100" style="height:550px;" alt="...">
+            <div class="carousel-caption d-none d-md-block">
+              <h5>Welcome to The YAATRIGO</h5>
+              <p>In this website you can view schedule of Trains.</p>
+
+            </div>
+          </div>
+        </div>
+        <a class="carousel-control-prev" href="#carouselExampleCaptions" role="button" data-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselExampleCaptions" role="button" data-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+        </a>
+       
+    </div>
+ </div> 
+
+{% block content %}
+{% endblock %}
+
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+        integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+        integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+        crossorigin="anonymous"></script>
+<script>
+  $(window).scroll(function(){
+  $('nav').toggleClass('scrolled',$(this).scrollTop() > 470);  
+  });
+</script>
+</body>
+</html>

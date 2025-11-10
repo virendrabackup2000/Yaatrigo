@@ -1,0 +1,43 @@
+{% extends 'myapp/busbase.html' %}
+{% block content %}
+<h3>{{msg}}</h3>
+<div style="overflow-x:hidden;overflow-y:smooth;height:450px;width:100%;margin-top:0px;background-image:url('/static/tourist image02.jpg')"><h2>List of Buses</h2>
+<table class="table table-striped table-dark" >
+    <thead style="background-color: dark;color: white;">
+    <td>ID</td>
+    <td>BUS NO.</td>
+    <td>BUS NAME</td>
+    <td>SOURCE</td>
+    <td>DESTINATION</td>
+    <td>Total KM</td>
+    <td>Travel Time</td>
+    <td>NUM OF SEATS</td>
+    <td>PRICE</td>
+    <td>DATE</td>
+    <td>TIME</td>
+
+    </thead>
+
+    {% for row in bus_list %}
+    <tr>
+        <td>{{row.id }}</td>
+        <td>{{row.bus_no}}</td>
+        <td>{{row.bus_name}}</td>
+        <td>{{row.source}}</td>
+        <td>{{row.dest}}</td>
+        <td>{{row.total_km}}km</td>
+        <td>{{row.travel_time}}Hr</td>
+        <td>{{row.nos}}</td>
+        <td>{{row.price}}Rs</td>
+        <td>{{row.date}}</td>
+        <td>{{row.time}}</td>
+
+
+    </tr>
+    {% endfor %}
+</table>
+
+  {{error}}
+
+</div>
+{% endblock %}

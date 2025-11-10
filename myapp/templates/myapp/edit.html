@@ -1,0 +1,23 @@
+{% extends 'myapp/adminbase.html' %}
+
+{% block content%}
+<form method="POST" action= "/update/{{ user.id }}">
+    {% csrf_token %}
+    <table>
+        <tr>
+            <td>
+                <input name = "username" required value ="{{user.username}}">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <input name = "email" required value ="{{user.email}}">
+            </td>
+        </tr>
+        <tr>
+            <td>
+               <button type = "submit">Update</button>
+            </td>
+        </tr>
+    </table>    
+{% endblock %}    

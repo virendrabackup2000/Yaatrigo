@@ -1,0 +1,68 @@
+{% extends 'myapp/adminbase.html' %}
+
+{% block content%}
+<form method="POST" action= "/updatebus/{{ bus.id }}">
+    {% csrf_token %}
+    <table>
+        <tr>
+            <td>
+                <input name = "bus_no" required value ="{{bus.bus_no}}">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <input name = "bus_name" required value ="{{bus.bus_name}}">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <input name = "source" required value ="{{bus.source}}">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <input name = "dest" required value ="{{bus.dest}}">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <input name = "total_km" required value ="{{bus.total_km}}">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <input name = "travel_time" required value ="{{bus.travel_time}}">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <input name = "nos" required value ="{{bus.nos}}">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <input name = "price" required value ="{{bus.price}}">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <input name = "travel_time" required value ="{{bus.travel_time}}">
+            </td>
+        </tr>
+        <tr>
+            <tr>
+                <td>
+                    <input name = "date" required value ="{{bus.date}}">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input name = "time" required value ="{{bus.time}}">
+                </td>
+            </tr>
+            <td>
+               <button type = "submit">Update</button>
+            </td>
+        </tr>
+    </table>    
+{% endblock %}    
