@@ -1,4 +1,4 @@
-from distutils.log import error
+# from distutils.log import error
 from django.shortcuts import render, redirect
 from .models import Bus,Train
 from django.contrib.auth import authenticate, login, logout
